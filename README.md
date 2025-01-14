@@ -35,7 +35,7 @@ All [original settings](https://github.com/techsneeze/dmarcts-report-parser/blob
 
 I made IMAP credentials required, but that doesn't mean you absolutely need to use this with an IMAP account. You can always bind a volume with zip/xml reports and use this image to scan those.
 
-I also took the liberτy to change the default IMAP settings to match industry standards.
+I also took the liberty to change the default IMAP settings to match industry standards.
 
 Made this to use it with [mailcow](https://github.com/mailcow/mailcow-dockerized) in my [custom status web app](https://github.com/rallisf1/mailcow-status-app)
 
@@ -53,7 +53,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
   dmarc:
-    image: rallisf1/dmarcts-report-parser-docker:latest
+    image: rallisf1/dmarcts-report-parser:latest
     labels:
       ofelia.enabled: "true"
       ofelia.job-exec.download-dmarc.schedule: "@every 6h"
@@ -68,7 +68,7 @@ crontab -e
 0 */6 * * * docker exec -it YOUR_CONTAINER_NAME /dmarcts-report-parser.pl -i >> /var/logs/dmarcts-report-parser.log 2>&1
 ```
 
-__Notice: this is just an example with logging on the host. Do not use this without log rotation, especially when enabling DEBUG__
+__Notice: this is just an example with logging on the host. Do not use this without log rotation, only logs errors without enabling DEBUG__
 
 ## License
 
