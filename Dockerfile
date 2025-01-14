@@ -1,5 +1,12 @@
 FROM alpine:3.20
 
+LABEL org.opencontainers.image.title="dmarcts-report-parser"
+LABEL org.opencontainers.image.description="Unofficial dockerized techsneeze/dmarcts-report-parser"
+LABEL org.opencontainers.image.url="https://hub.docker.com/r/rallisf1/dmarcts-report-parser"
+LABEL org.opencontainers.image.source="https://github.com/rallisf1/dmarcts-report-parser-docker"
+LABEL org.opencontainers.image.licenses="MIT"
+LABEL org.opencontainers.image.version="v1.0.0"
+
 ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
 ENV PERL5LIB=/usr/local/lib/perl5
